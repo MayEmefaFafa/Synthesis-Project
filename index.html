@@ -1,139 +1,324 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Buddy Ride</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-```
-<header>
-    <h1>Campus Buddy Ride</h1>
-    <p>Find someone heading your way.</p>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#post-trip">Post a Trip</a>
-        <a href="#find-buddy">Find a Buddy</a>
-    </nav>
-</header>
-
-<main>
-
-    <!-- Home -->
-    <section id="home">
-        <h2>Travel Together</h2>
-
-        <p>
-            Campus Buddy Ride is a digital campus travel board
-            that helps students discover other students travelling
-            to the same destination.
-        </p>
-
-        <p>
-            Post your travel plans or search for someone heading
-            in the same direction.
-        </p>
-    </section>
-
-
-    <!-- Post a Trip -->
-    <section id="post-trip">
-
-        <h2>Post a Trip</h2>
-
-        <form id="trip-form">
-
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
-
-            <label for="destination">Destination:</label>
-            <input type="text" id="destination" required>
-
-            <label for="date">Travel Date:</label>
-            <input type="date" id="date" required>
-
-            <label for="time">Departure Time:</label>
-            <input type="time" id="time" required>
-
-            <label for="luggage">Number of Bags:</label>
-            <input type="number" id="luggage" min="0" required>
-
-            <p>Travel Situation:</p>
-
-            <label>
-                <input type="radio" name="travel-status" value="buddy" checked>
-                Looking for a buddy
-            </label>
-
-            <label>
-                <input type="radio" name="travel-status" value="car">
-                I have a car and available space
-            </label>
-
-            <label for="message">Short Message:</label>
-            <textarea id="message"></textarea>
-
-            <button type="submit">Post Trip</button>
-
-        </form>
-
-    </section>
-
-
-    <!-- Find a Buddy -->
-    <section id="find-buddy">
-
-        <h2>Find a Buddy</h2>
-
-        <label for="search-destination">Destination:</label>
-        <input type="text" id="search-destination">
-
-        <p>How would you like to match?</p>
-
-        <label>
-            <input type="radio" name="match-type" value="location" checked>
-            Location only
-        </label>
-
-        <label>
-            <input type="radio" name="match-type" value="location-time">
-            Location + Time
-        </label>
-
-        <div id="search-time-container">
-            <label for="search-time">Departure Time:</label>
-            <input type="time" id="search-time">
+    <header>
+        <div class="brand">
+            <a href="#home" class="logo">Campus Buddy Ride</a>
+            <p>Better journeys begin together.</p>
         </div>
 
-        <button id="find-button">Find Matches</button>
+        <nav aria-label="Main navigation">
+            <a href="#home">Home</a>
+            <a href="#post-trip">Post a Trip</a>
+            <a href="#find-buddy">Find a Buddy</a>
+        </nav>
+    </header>
 
-    </section>
+    <main>
 
+        <!-- HOME SECTION -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <span class="eyebrow">YOUR CAMPUS TRAVEL COMMUNITY</span>
 
-    <!-- Results -->
-    <section id="results">
+                <h1>Your next journey starts with a fellow student.</h1>
 
-        <h2>Potential Matches</h2>
+                <p>
+                    Travelling away from campus? Find students heading
+                    to the same destination and connect before you leave.
+                </p>
 
-        <div id="match-list">
-            <p>Search for a destination to find potential travel buddies.</p>
-        </div>
+                <div class="hero-actions">
+                    <a href="#find-buddy" class="button primary-button">
+                        Find a Buddy
+                    </a>
 
-    </section>
+                    <a href="#post-trip" class="button secondary-button">
+                        Post a Trip
+                    </a>
+                </div>
+            </div>
 
-</main>
+            <div class="hero-note">
+                <span class="note-icon">✦</span>
+                <h2>Travel together</h2>
+                <p>
+                    Discover fellow students with similar travel plans.
+                    You decide how to connect and make your arrangements.
+                </p>
+            </div>
+        </section>
 
-<footer>
-    <p>&copy; 2026 Campus Buddy Ride</p>
-</footer>
+        <!-- HOW IT WORKS -->
+        <section id="how-it-works" class="how-section">
+            <div class="section-heading">
+                <span class="eyebrow">SIMPLE STEPS</span>
+                <h2>How it works</h2>
+                <p>Three simple steps to help you connect with fellow travellers.</p>
+            </div>
 
-<script src="script.js"></script>
-```
+            <div class="steps-grid">
+                <article class="step-card">
+                    <span class="step-number">01</span>
+                    <h3>Post Your Trip</h3>
+                    <p>
+                        Share your destination, travel date and departure time.
+                    </p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">02</span>
+                    <h3>Find a Match</h3>
+                    <p>
+                        Search for students travelling to the same place
+                        on the same date.
+                    </p>
+                </article>
+
+                <article class="step-card">
+                    <span class="step-number">03</span>
+                    <h3>Connect</h3>
+                    <p>
+                        Review potential matches and contact one another
+                        independently to make arrangements.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- POST A TRIP -->
+        <section id="post-trip" class="content-section">
+            <div class="section-heading">
+                <span class="eyebrow">SHARE YOUR PLANS</span>
+                <h2>Post a Trip</h2>
+                <p>Let other students know about your upcoming journey.</p>
+            </div>
+
+            <form id="trip-form">
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">Destination</label>
+                        <input
+                            type="text"
+                            id="destination"
+                            name="destination"
+                            placeholder="e.g. Kumasi"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">Travel Date</label>
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="time">Departure Time</label>
+                        <input
+                            type="time"
+                            id="time"
+                            name="time"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="luggage">Number of Luggage Items</label>
+                        <input
+                            type="number"
+                            id="luggage"
+                            name="luggage"
+                            min="0"
+                            step="1"
+                            value="0"
+                            required
+                        >
+                        <small>Luggage is displayed but does not affect matching.</small>
+                    </div>
+                </div>
+
+                <fieldset class="status-options">
+                    <legend>What is your travel situation?</legend>
+
+                    <label class="radio-option">
+                        <input
+                            type="radio"
+                            name="travel-status"
+                            value="buddy"
+                            required
+                        >
+                        <span>
+                            <strong>Looking for a buddy</strong>
+                            <small>I would like to connect with other students.</small>
+                        </span>
+                    </label>
+
+                    <label class="radio-option">
+                        <input
+                            type="radio"
+                            name="travel-status"
+                            value="car"
+                        >
+                        <span>
+                            <strong>Have a car / available spaces</strong>
+                            <small>I may have space for other students.</small>
+                        </span>
+                    </label>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="message">Additional Message (Optional)</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="3"
+                        placeholder="Share any useful details about your trip."
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="button primary-button">
+                    Post My Trip
+                </button>
+
+                <p id="post-feedback" class="feedback" aria-live="polite"></p>
+
+            </form>
+        </section>
+
+        <!-- FIND A BUDDY -->
+        <section id="find-buddy" class="content-section search-section">
+            <div class="section-heading">
+                <span class="eyebrow">YOUR NEXT JOURNEY</span>
+                <h2>Find a Buddy</h2>
+                <p>Enter your plans to discover potential travel companions.</p>
+            </div>
+
+            <form id="search-form">
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="search-destination">Destination</label>
+                        <input
+                            type="text"
+                            id="search-destination"
+                            name="search-destination"
+                            placeholder="e.g. Kumasi"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="search-date">Travel Date</label>
+                        <input
+                            type="date"
+                            id="search-date"
+                            name="search-date"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <fieldset class="status-options">
+                    <legend>Choose your matching preference</legend>
+
+                    <label class="radio-option">
+                        <input
+                            type="radio"
+                            name="match-type"
+                            value="location"
+                            checked
+                        >
+                        <span>
+                            <strong>Location Only</strong>
+                            <small>Same destination and date, regardless of time.</small>
+                        </span>
+                    </label>
+
+                    <label class="radio-option">
+                        <input
+                            type="radio"
+                            name="match-type"
+                            value="location-time"
+                        >
+                        <span>
+                            <strong>Location + Time</strong>
+                            <small>Same destination and date, within 30 minutes.</small>
+                        </span>
+                    </label>
+                </fieldset>
+
+                <div class="form-group" id="search-time-container">
+                    <label for="search-time">Preferred Departure Time</label>
+                    <input
+                        type="time"
+                        id="search-time"
+                        name="search-time"
+                    >
+                    <small>Required when Location + Time is selected.</small>
+                </div>
+
+                <button type="submit" class="button primary-button">
+                    Find Matches
+                </button>
+
+            </form>
+        </section>
+
+        <!-- MATCH RESULTS -->
+        <section id="results" class="content-section">
+            <div class="section-heading">
+                <span class="eyebrow">TRAVEL COMMUNITY</span>
+                <h2>Potential Matches</h2>
+                <p>
+                    Review trip details and make contact arrangements independently.
+                </p>
+            </div>
+
+            <div id="match-list" aria-live="polite">
+                <p class="empty-state">
+                    Your potential matches will appear here after you search
+                    or post a trip.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <a href="#home" class="footer-brand">Campus Buddy Ride</a>
+        <p>Connecting students travelling in the same direction.</p>
+        <small>
+            This platform helps students discover potential matches.
+            Travel and contact arrangements are made independently.
+        </small>
+    </footer>
 
 </body>
 </html>
